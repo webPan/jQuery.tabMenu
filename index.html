@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<script src="js/jquery.min.js"></script>
+<style>
+	*{padding: 0;margin:0;}
+	ul{list-style: none;}
+	body{font-size: 14px;}
+	.wrap{position:absolute;width: 100%;height: 100%}
+	#left-menu{list-style:none;width: 100px;}
+	a,a:link,a:visited{text-decoration: none;color: #fff}
+	#left-menu li{text-align: center;line-height: 35px;margin:1em;background: #222222}
+	.left-menu{float: left;}
+	.right-content{overflow: hidden;}
+	#top-tab-menu li{float: left;text-align: center;line-height: 35px;margin:1em 0.1em 1em 0;background: #999;padding:0 1em 0 1em;color: #fff;cursor: pointer;}
+	.top-tab-menu{overflow: hidden;}
+	.iframe{border: 1px solid #eee;height: calc(100% - 50px);position: relative;}
+	.right-content{height: 100%;}
+	li.active{background: #222 !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="left-menu">
+		<ul id="left-menu">
+			<li><a href="index/iframe0.html" target="if0">简介</a></li>
+			<li><a href="index/iframe1.html" target="if1">使用</a></li>
+			<li><a href="index/iframe2.html" target="if2">选项</a></li>
+			<li><a href="index/iframe3.html" target="if3">示例</a></li>
+			<li><a href="index/iframe4.html" target="if4">推荐</a></li>
+		</ul>
+	</div>
+	<div class="right-content">
+		<div class="top-tab-menu">
+			<ul id="top-tab-menu">
+				<li class="active if0" data-index="if0">简介</li>
+			</ul>
+		</div>
+		<div class="iframe" id="iframe">
+			<iframe class="if0" name="if0" src="index/iframe0.html" height="100%" height="100%" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script src="js/jquery.tabMenu.js"></script>
+<script>
+$('#left-menu').tabMenu({
+	leftMenu   : $('#left-menu'),//左边菜单
+	topTabMenu : $('#top-tab-menu'),//顶部菜单
+	iframe     : $('#iframe')//框架内容
+ });
+</script>
